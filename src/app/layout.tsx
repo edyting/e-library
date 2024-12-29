@@ -1,29 +1,26 @@
 import type { Metadata } from "next";
-import { Roboto} from "next/font/google";
+import { Rubik} from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
-const roboto = Roboto({
-  // variable: "--font-roboto",
-  weight: ["400", "500", "700", "900"],
-  style: ["normal"],
-  subsets: ["latin"],
-});
+
 
 
 // const inter = Inter({
 //   // variable: "--font-roboto",
-//   weight: ["400", "500", "700", "900"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-// });
-// const bokor = Bokor({
-//   // variable: "--font-roboto",
-//   weight: ["400"],
+//   weight: ["500", "700", "900"],
 //   style: ["normal"],
 //   subsets: ["latin"],
 //   display: "swap",
 // });
+
+const rubik = Rubik({
+  // variable: "--font-roboto",
+  weight: ["400","500","600"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 
 export const metadata: Metadata = {
@@ -39,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`  ${roboto.className} antialiased`}
+        className={`  ${rubik.className} antialiased`}
       >
         <Navbar/>
         {children}
