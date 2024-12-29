@@ -4,15 +4,12 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 
 
+// sidebar
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+// import { AppSidebar } from "@/components/app-sidebar";
+import AppSidebar from "@/components/ui/app-sidebar";
 
 
-// const inter = Inter({
-//   // variable: "--font-roboto",
-//   weight: ["500", "700", "900"],
-//   style: ["normal"],
-//   subsets: ["latin"],
-//   display: "swap",
-// });
 
 const rubik = Rubik({
   // variable: "--font-roboto",
@@ -35,12 +32,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`  ${rubik.className} antialiased`}
-      >
-        <Navbar/>
-        {children}
-      </body>
+      <SidebarProvider>
+        <AppSidebar />
+        <body className={`  ${rubik.className} antialiased`}>
+          <Navbar />
+          <SidebarTrigger />
+          {children}
+        </body>
+      </SidebarProvider>
     </html>
   );
 }
